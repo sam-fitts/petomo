@@ -1,4 +1,9 @@
 class AnimalController < ApplicationController
+
+  def new
+    @animal = Animal.new
+  end
+
   def create
     @animal = Animal.new(animal_params)
     @shelter = Shelter.find(params[:shelter_id])
@@ -23,7 +28,7 @@ class AnimalController < ApplicationController
 
   def destroy
     @animal = Animal.find(params[:id])
-    @shelter = @animal.shelter
+    @shelter = @animal.user
     @animal.destroy
     redirect_to shelter_path(@shelter)
   end
