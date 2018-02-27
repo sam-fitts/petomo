@@ -1,58 +1,55 @@
-class UserController < ApplicationController
-  before_action :authenticate_user!
-  include Pundit
-
-  after_action :verify_authorized, except: :index, unless: :skip_pundit?
-  after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
-
-  def index
-    @users = policy_scope(User).order(created_at: :desc)
-  end
-
-  def show
-    @user = User.find(params[:id])
-  end
-
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to user_path(@user)
-    else
-      render :new
-    end
-    authorize @user
-  end
-
-  def edit
-    @user = User.find(params[:id])
-  end
-
-  def update
-    @animal = Animal.find(params[:id])
-    @animal.update(params[:animal])
-    @users.save
-  end
-
-  def destroy
-    @animal = Animal.find(params[:id])
-    @user = @animal.users
-    @animal.destroy
-    redirect_to user_path(@user)
-  end
-
-  private
+# class UserController < ApplicationController
+#   before_action :authenticate_user!
 
 
-  def user_params
-    params.require(:user).permit(:name, :location)
-  end
+#   def index
+#     @users = policy_scope(User).order(created_at: :desc)
+#   end
 
-  def skip_pundit?
-    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
-  end
+#   def show
+#     @user = User.find(params[:id])
+#   end
 
-end
+#   def new
+#     @user = User.new
+#   end
+
+#   def create
+#     @user = User.new(user_params)
+#     if @user.save
+#       redirect_to user_path(@user)
+#     else
+#       render :new
+#     end
+#     authorize @user
+#   end
+
+#   def edit
+#     @user = User.find(params[:id])
+#   end
+
+#   def update
+#     @animal = Animal.find(params[:id])
+#     @animal.update(params[:animal])
+#     @users.save
+#   end
+
+#   def destroy
+#     @animal = Animal.find(params[:id])
+#     @user = @animal.users
+#     @animal.destroy
+#     redirect_to user_path(@user)
+#   end
+
+#   private
+
+
+#   def user_params
+#     params.require(:user).permit(:name, :location)
+#   end
+
+#   def skip_pundit?
+#     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+#   end
+
+# end

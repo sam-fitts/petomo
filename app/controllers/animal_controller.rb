@@ -1,23 +1,30 @@
 class AnimalController < ApplicationController
 
   def new
-    @animal = Animal.new
+    @animal = Animal.new if @user.is_shelter?
   end
 
   def create
     @animal = Animal.new(animal_params)
-    @shelter = Shelter.find(params[:shelter_id])
-    @animal.shelter = @shelter
+    @user = User.find(params[:user_id])
+    @animal.user = @user
     if @animal.save
-      redirect_to shelter_path(@shelter)
+      redirect_to user_path(@user)
     else
       @animal = Animal.all
-      render 'shelters/show'
+      render 'users/show'
     end
   end
 
   def edit
     @animal = Animal.find(params[:id])
+  end
+
+  def destroy
+    @animal = Animal.find(params[:id])
+    @user = @animal.user
+    @animal.destroy
+    redirect_to user_path(@user)
   end
 
   def update
@@ -26,10 +33,10 @@ class AnimalController < ApplicationController
     @animals.save
   end
 
-  def destroy
-    @animal = Animal.find(params[:id])
-    @shelter = @animal.user
-    @animal.destroy
-    redirect_to shelter_path(@shelter)
+  private
+
+  def animal_params
+    params.require(:animal).permit(:name, :description, :animal_type, :pictures)
   end
+
 end
