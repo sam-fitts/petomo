@@ -1,7 +1,11 @@
-class AnimalController < ApplicationController
+class AnimalsController < ApplicationController
+
+  def index
+    @animals = Animal.all
+  end
 
   def new
-    @animal = Animal.new if @user.is_shelter?
+    @animal = Animal.new #if @user.is_shelter?
   end
 
   def create
