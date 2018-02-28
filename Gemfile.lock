@@ -192,6 +192,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass
+  bundler
   devise
   faker
   figaro
