@@ -1,0 +1,7 @@
+<%= simple_form_for @animal do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description, placeholder: "Tell potential owners about their future best friend" %>
+  <%= f.input :animal_type, placeholder: "Cat, Dog, etc." %>
+  <%= f.input :pictures, label: 'Photo', placeholder: "Please submit image URL" %>
+  <%= f.button :submit %>
+<% end %>

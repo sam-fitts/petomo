@@ -1,3 +1,4 @@
+
 class AnimalPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
@@ -18,3 +19,4 @@ class AnimalPolicy < ApplicationPolicy
     end
   end
 end
+
