@@ -1,0 +1,59 @@
+body {
+  background: #ddd6f3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #faaca8, #ddd6f3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #faaca8, #ddd6f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+  max-width: 960px;
+}
+
+
+
+
+/*
+ * Extra utilities
+ */
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.flex-equal > * {
+  -ms-flex: 1;
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1;
+  }
+}
+
+.overflow-hidden { overflow: hidden; }
+
+.mb-md-3, .my-md-3 {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  padding-left: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#map-div {
+  background: url("cat-medium.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-attachment: fixed;
+}
+
+#map-div a {
+  font-size: 5 px;
+
+}
+
+a {
+  color: black;
+}
