@@ -1,3 +1,18 @@
-<% @animals.each do |x| %>
-<%= image_tag x.pictures %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @animals.each do |x| %>
+    <div class="col-xs-12 col-sm-6 col-md-4"></div>
+      <div class="card">
+        <%= image_tag x.pictures, style: "width: 200px" %>
+        <!-- <div class="card"> -->
+        <p><%= x.name %></p>
+        <p><%= x.description %></p>
+        <p><%= x.animal_type %></p>
+        <!-- </div> -->
+
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
