@@ -2,7 +2,7 @@ class AnimalPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.where(user: user)
-      scope.where(shelter: shelter)
+      scope.where(user: shelter)
     end
 
     def update?
