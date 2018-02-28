@@ -4,16 +4,20 @@ class AnimalsController < ApplicationController
     @animals = Animal.all
   end
 
+  def show
+    @animal = Animal.find(params[:id])
+  end
+
   def new
     @animal = Animal.new #if @user.is_shelter?
   end
 
   def create
     @animal = Animal.new(animal_params)
-    @user = User.find(params[:user_id])
+    @user = current_user
     @animal.user = @user
     if @animal.save
-      redirect_to user_path(@user)
+      redirect_to animal_path(@animal)
     else
       @animal = Animal.all
       render 'users/show'
