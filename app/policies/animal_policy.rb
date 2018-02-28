@@ -5,11 +5,15 @@ class AnimalPolicy < ApplicationPolicy
     end
 
     def update?
-    record.user == user
+      record.user == user
     end
 
     def destroy?
-    record.user == user
+      user.shelter?
+    end
+
+    def create?
+      return true
     end
   end
 end

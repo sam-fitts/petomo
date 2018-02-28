@@ -21,6 +21,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.inet     :current_sign_in_ip
       t.inet     :last_sign_in_ip
 
+      #if user is shelter => pundit code to verify
+      t.boolean :admin, default: false, null: false
+
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at
