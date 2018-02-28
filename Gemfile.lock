@@ -198,6 +198,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass
+  bundler
   clearance
   devise
   faker
