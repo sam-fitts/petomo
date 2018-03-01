@@ -1,3 +1,20 @@
+# TO ADD INTO DEVISE CONTROLLER:
+
+# def user_posts
+#   @posts = policy_scope(Post)
+# end
+
+# class UsersController < ApplicationController
+#   def update
+#     @user = User.find(params[:id])
+#     @user.toggle!(:admin)
+#     flash[:success] = 'OK!'
+#     redirect_to root_path
+#   end
+# end
+
+
+
 # class UserController < ApplicationController
 #   before_action :authenticate_user!
 

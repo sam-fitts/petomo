@@ -1,53 +1,55 @@
-# trueclass ApplicationPolicy
-#   attr_reader :user, :record
 
-#   def initialize(user, record)
-#     @user = user
-#     @record = record
-#   end
+class ApplicationPolicy
+  attr_reader :user, :record
 
-#   def index?
-#     true
-#   end
+  def initialize(user, record)
+    raise Pundit::NotAuthorizedError, "must be logged in" unless user
+    @user = user
+    @record = record
+  end
 
-#   def show?
-#     scope.where(:id => record.id).exists?
-#   end
+  def index?
+    false
+  end
 
-#   def create?
-#     true
-#   end
+  def show?
+    scope.where(:id => record.id).exists?
+  end
 
-#   def new?
-#     create?
-#   end
+  def create?
+    false
+  end
 
-#   def update?
-#     true
-#   end
+  def new?
+    create?
+  end
 
-#   def edit?
-#     update?
-#   end
+  def update?
+    false
+  end
 
-#   def destroy?
-#     true
-#   end
+  def edit?
+    update?
+  end
 
-#   def scope
-#     Pundit.policy_scope!(user, record.class)
-#   end
+  def destroy?
+    false
+  end
 
-#   class Scope
-#     attr_reader :user, :scope
+  def scope
+    Pundit.policy_scope!(user, record.class)
+  end
 
-#     def initialize(user, scope)
-#       @user = user
-#       @scope = scope
-#     end
+  class Scope
+    attr_reader :user, :scope
 
-#     def resolve
-#       scope
-#     end
-#   end
-# end
+    def initialize(user, scope)
+      @user = user
+      @scope = scope
+    end
+
+    def resolve
+      scope
+    end
+  end
+end

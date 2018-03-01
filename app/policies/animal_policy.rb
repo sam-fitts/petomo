@@ -1,19 +1,22 @@
-# class AnimalPolicy < ApplicationPolicy
-#   class Scope < Scope
-#     def resolve
-#       scope.all
-#     end
 
-#     def update?
-#     record.user == user
-#     end
+class AnimalPolicy < ApplicationPolicy
+  class Scope < Scope
+    def resolve
+      scope.where(user: user)
+      scope.where(user: shelter)
+    end
 
-#     def destroy?
-#     record.user == user
-#     end
+    def update?
+      record.user == user
+    end
 
-#     def create?
-#     return true
-#     end
-#   end
-# end
+    def destroy?
+      user.shelter?
+    end
+
+    def create?
+      return true
+    end
+  end
+end
+
