@@ -7,7 +7,14 @@
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
+    <%= f.input :is_shelter, as: :boolean, checked_value: true, unchecked_value: false, inline_label: "Are you a shelter?" %>
+    <div id="extra-info" style="display: none;">
+      <%= f.input :state %>
+      <%= f.input :city %>
+      <%= f.input :address %>
+    </div>
   </div>
+
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
@@ -15,3 +22,16 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<script>
+    // console.log("hello");
+    var checkbox = document.getElementById("user_is_shelter");
+
+    checkbox.addEventListener('click', function(){
+       if (document.getElementById('extra-info').style.display == "none") {
+        document.getElementById('extra-info').style.display = "block"
+       } else {
+        document.getElementById('extra-info').style.display = "none"
+       }
+    });
+  </script>
