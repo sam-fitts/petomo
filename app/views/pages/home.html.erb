@@ -6,6 +6,13 @@
           <h1 class="display-5">Our mission is huge and honorable</h1>
           <p class="lead">&nbsp;</p>
         </div>
+        <%= form_tag root_path, method: :get do %>
+        <ul>
+          <li><%= select_tag :state, options_for_select(@users.pluck(:state).uniq), include_blank: "Select State"%></li>
+          <li><%= select_tag :city, options_for_select(@users.pluck(:city).uniq), include_blank: "Select City"%></li>
+          <li><%= select_tag :address, options_for_select(@users.pluck(:address).uniq), include_blank: "Select Address"%></li>
+        </ul>
+        <% end %>
       </div>
     </div>
 </body>
