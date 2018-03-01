@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+#map-div {
+  background: url("cat-medium.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-attachment: fixed;
+}
+
+#map-div a {
+  font-size: 5 px;
+
+}
