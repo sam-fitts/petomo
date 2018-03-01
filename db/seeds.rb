@@ -15,7 +15,20 @@ puts('Cleaned DB up!')
       email: Faker::Internet.email,
       password: "password",
       is_shelter: false,
+      state: "California",
+      city: ["City1", "City2"].sample
       }])
+end
+
+6.times do
+User.create!([
+  {
+    email: Faker::Internet.email,
+    password: "password",
+    is_shelter: false,
+    state: "Alabama",
+    city: ["City3", "City4"].sample
+    }])
 end
 puts('Created users!')
 
