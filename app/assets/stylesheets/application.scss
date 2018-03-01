@@ -14,7 +14,7 @@
 @import "components/index";
 @import "pages/index";
 
-// @import "config/bootstrap.min.js";
+@import "config/bootstrap.min";
 
 body {
   background: #ddd6f3;  /* fallback for old browsers */
@@ -22,9 +22,9 @@ body {
   background: linear-gradient(to right, #faaca8, #ddd6f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-size: 1.5em;
 }
-.container {
-  max-width: 960px;
-}
+// .container {
+//   max-width: 960px;
+// }
 /*
  * Extra utilities
  */
