@@ -1,3 +1,23 @@
-<% @animals.each do |x| %>
-<%= image_tag x.pictures %>
-<% end %>
+
+<p>&nbsp;</p>
+<div class="container">
+  <div class="row">
+    <% @animals.each do |x| %>
+      <div class="col-sm-6">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= x.pictures %>'); border: 2px solid #E9D6E3; border-radius: 18px;">
+          <div class="card-category"><%= x.animal_type %></div>
+          <div class="card-description">
+            <h2><%= x.name %></h2>
+            <p></p>
+          </div>
+          <a class="card-link" href="<%= animal_path(x) %>" ></a>
+        </div>
+        <br>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
