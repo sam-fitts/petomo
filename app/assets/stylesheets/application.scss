@@ -60,3 +60,25 @@ body {
 a {
   color: black;
 }
+
+.page-description {
+  width: 75%;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  background-color: #F6E1EE;
+  border: 2px solid #E9D6E3;
+  border-radius: 14px;
+}
+.page-description h1 {
+  padding-top: 10px;
+}
+// .centered-form {
+//   text-align: center;
+// }
+
+
+.form-center {
+  padding-left: 37%;
+}
