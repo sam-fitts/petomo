@@ -1,6 +1,10 @@
 class ReservationsController < ApplicationController
-  # def index
-  # end
+  before_action :authenticate_user!, only: :new
+  def index
+    @user = current_user
+    # @animal = Animal.find(params[:animal_id])
+    @reservations = @user.reservations
+  end
 
   # def show
 
@@ -30,6 +34,9 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    @resevation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to usert_path(current_user)
   end
 
   private

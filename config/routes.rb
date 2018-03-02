@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get '/confirmation', to: "pages#confirmation"
   get '/profile', to: "pages#profile"
   get '/about', to: "pages#about"
-  devise_for :users
+  devise_for :users do
+    resources :reservations, only: [:index]
+  end
   root to: 'pages#home'
   resources :animals do
     resources :reservations, only: [:new, :create]
