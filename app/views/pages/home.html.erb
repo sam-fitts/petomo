@@ -3,20 +3,22 @@
     <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
       <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 py-3">
-          <h1 class="display-5">Our mission is huge and honorable</h2>
+          <h1 class="display-5">Foster a pet for a trial period with Petomo!</h2>
           <p class="lead">&nbsp;</p>
           <%= form_tag root_path, method: :get do %>
-        <ul>
-          <li><%= select_tag :state, options_for_select(@users.pluck(:state).uniq), include_blank: "Select State"%></li>
-          <br><br>
-          <li><%= select_tag :city, options_for_select(@users.pluck(:city).uniq), include_blank: "Select City"%></li>
-          <br><br>
-          <li><%= select_tag :address, options_for_select(@users.pluck(:address).uniq), include_blank: "Select Address"%></li>
-          <br><br>
-              <%= button_tag(type: "submit") do %>
-                <%= content_tag(:strong, 'Find a Friend!') %>
-              <% end %>
-        </ul>
+        <div class="styled-select">
+          <ul>
+            <li><%= select_tag :state, options_for_select(@users.pluck(:state).uniq), include_blank: "(1) Select Your State"%></li>
+            <br><br>
+            <li><%= select_tag :city, options_for_select(@users.pluck(:city).uniq), include_blank: "(2) Select City"%></li>
+            <br><br>
+            <li><%= select_tag :address, options_for_select(@users.pluck(:address).uniq), include_blank: "(3) Select Address"%></li>
+            <br><br>
+                <%= button_tag(type: "submit") do %>
+                  <%= content_tag(:strong, 'Find a Friend!') %>
+                <% end %>
+          </ul>
+        </div>
         <% end %>
         </div>
 
