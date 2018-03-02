@@ -8,13 +8,16 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    @animal = Animal.find(params[:animal_id])
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
-    if reservation.save
-      redirect_to root_path
+    @animal = Animal.find(params[:animal_id])
+    @reservation.animal = @animal
+    if @reservation.save
+      redirect_to confirmation_path
     else
       render :new
     end

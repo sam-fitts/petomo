@@ -1,17 +1,5 @@
 Rails.application.routes.draw do
-  # get 'reservations/index'
-
-  # get 'reservations/new'
-
-  # get 'reservations/create'
-
-  # get 'reservations/edit'
-
-  # get 'reservations/update'
-
-  # get 'reservations/destroy'
-
-
+  get '/confirmation', to: "pages#confirmation"
   get '/profile', to: "pages#profile"
   get '/about', to: "pages#about"
   devise_for :users
