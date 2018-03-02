@@ -1,3 +1,5 @@
+<!-- :authenticate_user -->
+
 <%= simple_form_for([@animal, @reservation]) do |f| %>
   <%= f.input :start_date, as: :date, start: Date.today, end: Date.today %>
   <%= f.input :end_date , as: :date, start: Date.today + 14, end: Date.today + 42 %>
