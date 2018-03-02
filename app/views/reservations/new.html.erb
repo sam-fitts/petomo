@@ -1,2 +1,5 @@
-<h1>Reservations#new</h1>
-<p>Find me in app/views/reservations/new.html.erb</p>
+<%= simple_form_for @reservation do |f| %>
+  <%= f.input :start_date, as: :date, start: Date.today, end: Date.today + 3 %>
+  <%= f.input :end_date , as: :date, start_day: Date.today.day + 14, end_day: Date.today.day + 42 %>
+  <%= f.submit "Create Reservation" %>
+<% end %>
