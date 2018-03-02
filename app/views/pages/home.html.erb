@@ -5,7 +5,7 @@
         <div class="my-3 py-3">
           <h1 class="display-5">Our mission is huge and honorable</h2>
           <p class="lead">&nbsp;</p>
-          <%= form_tag root_path, method: :get do %>
+          <%= form_tag animals_path, method: :get do %>
         <ul>
           <li><%= select_tag :state, options_for_select(@users.pluck(:state).uniq), include_blank: "Select State"%></li>
           <br><br>
