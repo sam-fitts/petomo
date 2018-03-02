@@ -51,13 +51,10 @@ ActiveRecord::Schema.define(version: 20180302050016) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_shelter"
-    t.string "confirmation_token", limit: 128
-    t.string "remember_token", limit: 128
     t.string "state"
     t.string "city"
     t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["remember_token"], name: "index_users_on_remember_token"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
