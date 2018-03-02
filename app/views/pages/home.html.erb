@@ -14,7 +14,7 @@
           <%= form_tag animals_path, method: :get do %>
         <div class="styled-select">
           <ul>
-            <li><%= select_tag :state, options_for_select(@users.pluck(:state).uniq), include_blank: "(1) Select Your State"%></li>
+            <li><%= select_tag :state, options_for_select(@users.pluck(:state).uniq.reject(&:blank?)), include_blank: "(1) Select Your State"%></li>
             <br><br>
             <li><%= select_tag :city, options_for_select(@users.pluck(:city).uniq), include_blank: "(2) Select City"%></li>
             <br><br>
