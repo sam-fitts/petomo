@@ -16,9 +16,9 @@
           <ul>
             <li><%= select_tag :state, options_for_select(@users.pluck(:state).uniq.reject(&:blank?)), include_blank: "(1) Select Your State"%></li>
             <br><br>
-            <li><%= select_tag :city, options_for_select(@users.pluck(:city).uniq), include_blank: "(2) Select City"%></li>
+            <li><%= select_tag :city, options_for_select(@users.pluck(:city).uniq.reject(&:blank?)), include_blank: "(2) Select City"%></li>
             <br><br>
-            <li><%= select_tag :address, options_for_select(@users.pluck(:address).uniq), include_blank: "(3) Select Address"%></li>
+            <li><%= select_tag :address, options_for_select(@users.pluck(:address).uniq.reject(&:blank?)), include_blank: "(3) Select Address"%></li>
             <br><br>
                 <%= button_tag(type: "submit") do %>
                   <%= content_tag(:strong, 'Find a Friend!') %>
