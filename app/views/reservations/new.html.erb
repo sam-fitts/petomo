@@ -1,7 +1,24 @@
-<!-- :authenticate_user -->
 
-<%= simple_form_for([@animal, @reservation]) do |f| %>
-  <%= f.input :start_date, as: :date, start: Date.today, end: Date.today %>
-  <%= f.input :end_date , as: :date, start: Date.today + 14, end: Date.today + 42 %>
-  <%= f.submit "Create Reservation" %>
-<% end %>
+
+      <p>&nbsp;</p>
+      <div class="page-description">
+<!--         <h1>Reservation Form</h1> -->
+        <br>
+          <div class="col-xs-4 col-xs-offset-3">
+            <div class="form-center">
+              <%= simple_form_for([@animal, @reservation]) do |f| %>
+                <%= f.input :start_date, as: :date, start: Date.today, end: Date.today, class: 'form-center' %>
+                <%= f.input :end_date , as: :date, start: Date.today + 14, end: Date.today + 42, class: 'form-center' %>
+                <%= f.submit "Create Reservation" %>
+              <% end %>
+                      <p>&nbsp;</p>
+            </div>
+          </div>
+
+      </div>
+              <p>&nbsp;</p>
+
+
+
+
+
