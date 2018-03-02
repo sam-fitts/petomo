@@ -4,9 +4,12 @@
       <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 py-3">
           <h1 class="display-5">Foster a pet for a trial period with Petomo!</h2>
-          <p class="lead">&nbsp;</p>
+<!--           <p class="lead">&nbsp;</p> -->
 
-          <%= form_tag root_path, method: :get do %>
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+          <%= form_tag animals_path, method: :get do %>
         <div class="styled-select">
           <ul>
             <li><%= select_tag :state, options_for_select(@users.pluck(:state).uniq), include_blank: "(1) Select Your State"%></li>
@@ -22,6 +25,8 @@
         </div>
 
         <% end %>
+        <br>
+        <p>I am a shelter. Take me to the <%= link_to t(".sign_in", default: "shelter page"), new_user_session_path %>.</p>
         </div>
 
       </div>
